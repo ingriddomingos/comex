@@ -4,7 +4,8 @@ public class Categoria {
 
 	private long id;
 	private String nome;
-	private StatusCategoria status = StatusCategoria.ativa;
+	private StatusCategoria status = StatusCategoria.ATIVA;
+	
 	public long getId() {
 		return id;
 	}
