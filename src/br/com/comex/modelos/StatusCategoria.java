@@ -1,4 +1,4 @@
-package comex;
+package br.com.comex.modelos;
 
 public enum StatusCategoria {
 
