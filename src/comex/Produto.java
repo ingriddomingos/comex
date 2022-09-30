@@ -2,12 +2,12 @@ package comex;
 
 public class Produto {
 	
-	int id;
-	String nome;
-	String descricao;
-	double precoUnitario;
-	float quantidadeEstoque;
-	String categoriaProduto;
+	private int id;
+	private String nome;
+	private String descricao;
+	private double precoUnitario;
+	private float quantidadeEstoque;
+	private String categoriaProduto;
 	int Isento;
 	
 	public int getId() {
