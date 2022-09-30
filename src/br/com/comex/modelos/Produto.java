@@ -12,11 +12,8 @@ public class Produto {
 	int Isento;
 
 
-	public Produto(long id, String nome, String descricao, double precoUnitario, float quantidadeEstoque,
+	public Produto(long id, String nome, double precoUnitario, float quantidadeEstoque,
 			String categoriaProduto) {
-		if (id != proximoId) {
-			throw new IllegalArgumentException("Favor informar o id na ordem! ");
-		}
 		this.id = id;
 		this.nome = nome;
 		this.descricao = descricao;
@@ -29,9 +26,6 @@ public class Produto {
 		if (nome == null) {
 			throw new IllegalArgumentException("É necessário informar um nome para o curso! ");
 		}
-		if (id == 0) 
-			throw new IllegalArgumentException("O Id deve ser maior que 0! ");
-
 		if (nome.length() <= 5) {
 			throw new IllegalArgumentException("Favor informar um nome para o curso com no mínimo 5 caracteres! ");
 		}
@@ -47,14 +41,17 @@ public class Produto {
 		this.categoriaProduto = categoriaProduto;
 	}
 
-	public Produto(int i, String string, String string2, double d, int j, String string3) {
+	public Produto(String nome, String descricao, double precoUnitario, float quantidadeEstoque, String categoriaProduto) {
 	}
 
 	public Produto() {
 	}
 
 
-	public Produto(String nome, String descricao, double precoUnitario, double quantidadeEstoque, String categoriaProduto) {
+	public Produto(long id,String nome, String descricao, double precoUnitario, float quantidadeEstoque, String categoriaProduto) {
+	
+	if (id == 0) 
+		throw new IllegalArgumentException("O Id deve ser maior que 0! ");
 	}
 
 		public long getId() {
