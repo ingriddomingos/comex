@@ -1,12 +1,12 @@
 package comex;
 
 	public class ProdutoIsento extends Produto{
-		int id = 0;
-		String nome;
-		String descricao;
-		double precoUnitario;
-		int quantidadeEstoque;
-		String categoriaProduto;
+		private int id = 0;
+		private String nome;
+		private String descricao;
+		private double precoUnitario;
+		private int quantidadeEstoque;
+		private String categoriaProduto;
 		
 		public int getId() {
 			return id;
