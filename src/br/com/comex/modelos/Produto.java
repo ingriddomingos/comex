@@ -9,7 +9,7 @@ public class Produto {
 	private double precoUnitario;
 	private float quantidadeEstoque;
 	private String categoriaProduto;
-	int Isento;
+	private int Isento;
 
 
 	public Produto(long id, String nome, double precoUnitario, float quantidadeEstoque,
@@ -41,7 +41,7 @@ public class Produto {
 		this.categoriaProduto = categoriaProduto;
 	}
 
-	public Produto(String nome, String descricao, double precoUnitario, float quantidadeEstoque, String categoriaProduto) {
+	public Produto(String nome, String descricao, double precoUnitario, float quantidadeEstoque, int i, int j, String categoriaProduto) {
 	}
 
 	public Produto() {
@@ -53,6 +53,19 @@ public class Produto {
 	if (id == 0) 
 		throw new IllegalArgumentException("O Id deve ser maior que 0! ");
 	}
+
+		public Produto(String nome2, String descricao2, Integer preco_unitario, Integer quantidade_estoque,
+			int categoria_id, Integer id2, String tipo) {
+	}
+
+
+
+		public Produto(String nome2, String descricao2, double precoUnitario2, int quantidadeEstoque2, int i, int j,
+				String categoriaProduto2) {
+		}
+
+		public Produto(String string, String string2, String string3, String string4, char c, String string5) {
+		}
 
 		public long getId() {
 		return id;
