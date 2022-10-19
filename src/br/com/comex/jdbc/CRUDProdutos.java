@@ -81,8 +81,8 @@ public class CRUDProdutos {
 		Connection connection = factory.recuperarConexao();
 
 		String sql = "UPDATE comex.PRODUTO SET nome = ?"
-				//+ ", descricao = ?, preco_unitario = ?, "
-				//"quantidade_estoque = ?, categoria_id = ? 
+				+ ", descricao = ?, preco_unitario = ?, "
+				"quantidade_estoque = ?, categoria_id = ? 
 				+ " where id = ?";
 
 		PreparedStatement stm = connection.prepareStatement(sql);
