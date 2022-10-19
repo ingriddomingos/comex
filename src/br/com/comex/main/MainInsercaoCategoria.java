@@ -16,9 +16,9 @@ public class MainInsercaoCategoria {
 
 		Statement stm = connection.createStatement();
 
-		stm.execute("INSERT INTO comex.CATEGORIA(nome, status) VALUES ('INFORMÁTICA', 'ATIVA')");
-		stm.execute("INSERT INTO comex.CATEGORIA(nome, status) VALUES ('MÓVEIS', 'INATIVA')");
-		stm.execute("INSERT INTO comex.CATEGORIA(nome, status) VALUES ('LIVROS', 'ATIVA')");
+		stm.execute("INSERT INTO comex.CATEGORIA(nome, status) VALUES ('TESTE', 'INATIVA')");
+		//stm.execute("INSERT INTO comex.CATEGORIA(nome, status) VALUES ('MÓVEIS', 'INATIVA')");
+	//	stm.execute("INSERT INTO comex.CATEGORIA(nome, status) VALUES ('LIVROS', 'ATIVA')");
 
 		System.out.println("Campos inseridos com êxito! ");
 		

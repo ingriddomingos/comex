@@ -11,8 +11,8 @@ public class MainRemocaoCategoria {
 		ConnectionFactory factory = new ConnectionFactory();
 		Connection connection = factory.recuperarConexao();
 
-		PreparedStatement stm = connection.prepareStatement("DELETE FROM comex.CATEGORIA WHERE ID = ?");
-		stm.setInt(1, 189);
+		PreparedStatement stm = connection.prepareStatement("DELETE FROM comex.CATEGORIA WHERE STATUS = ?");
+		stm.setString(1, "INATIVA");
 		stm.execute();
 		Integer linhasAlteradas = stm.getUpdateCount();
 		System.out.println("Categorias excluídas com êxito: " + linhasAlteradas);
