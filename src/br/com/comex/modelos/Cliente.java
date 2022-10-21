@@ -1,132 +1,124 @@
 package br.com.comex.modelos;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Cliente {
-	private static long contadorID = 1;
-	private long id;
+	private int id;
 	private String nome;
 	private String cpf;
 	private String telefone;
 	private String rua;
-	private String numeroEnd;
+	private String numero;
 	private String complemento;
 	private String bairro;
 	private String cidade;
-	private String estados;
-	private Estado estado;
+	private String uf;
 
-	public Cliente(String nome, String cpf, String telefone, String rua, String numeroEnd, String complemento, 
-			String bairro, String cidade, Estado estado) {
-		
-		this.id = contadorID;
-		this.nome = nome;
-		this.cpf = cpf;
-		this.telefone = telefone;
-		this.rua = rua; 
-		this.numeroEnd = numeroEnd;
-		this.complemento = complemento;
-		this.bairro = bairro;
-		this.cidade = cidade;
-		this.estado = estado;
-		contadorID++;
-		
-
-		validacaoCpf();
-		
+	public int getId() {
+		return id;
 	}
-	
-	public Cliente(Integer id,String nome, String cpf, String telefone, String rua,
-			String numeroEnd, String complemento, String bairro, String cidade, String estados) {
+
+
+	public void setId(int id) {
 		this.id = id;
-		this.nome = nome;
-		this.cpf = cpf;
-		this.telefone = telefone;
-		this.rua = rua;
-		this.numeroEnd = numeroEnd;
-		this.complemento = complemento;
-		this.bairro = bairro;
-		this.cidade = cidade;
-		this.estados = estados;
 	}
-	
-	public void validacaoId() throws Exception {
-		if (id < 0)
-			throw new Exception("Id deve ser maior que 0");
-	}
-	
-	public void validacaoNome() throws Exception {
-		if (nome.length() < 5 | nome == null)
-			throw new Exception("O nome deve ser maior que 5, e não pode ser  nulo");
-		
-		if (nome.matches("[0-9].*")) 
-			throw new Exception("O nome deve iniciar somente com letras!");
-	
-	
-		if (!telefone.matches("^\\([0-9]{2}\\) [0-9]{1} ([0-9]{4}-[0-9]{4})$")) 
-			throw new Exception("O telefone deve ser formatado da "
-					+ "forma a seguir. Ex: (00) 0 0000-0000");
-	}
-	
-	public void validacaoCpf() {
-		if (cpf.length() < 11 | cpf.length() > 14 | cpf == null)
-			throw new IllegalArgumentException("cpf deve conter de 11 a 14 caracteres");}
-		
-	
-	public long getId() {
-		return this.id;
-	}
-	
+
+
 	public String getNome() {
-		return this.nome;
+		return nome;
 	}
-	
+
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+
 	public String getCpf() {
-		return this.cpf;
+		return cpf;
 	}
-	
+
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+
 	public String getTelefone() {
-		return this.telefone;
+		return telefone;
 	}
-	
+
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+
 	public String getRua() {
-		return this.rua;
+		return rua;
 	}
-	
-	public String getNumeroEnd() {
-		return this.numeroEnd;
+
+
+	public void setRua(String rua) {
+		this.rua = rua;
 	}
-	
+
+
+	public String getNumero() {
+		return numero;
+	}
+
+
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+
+
 	public String getComplemento() {
-		return this.complemento;
+		return complemento;
 	}
-	
+
+
+	public void setComplemento(String complemento) {
+		this.complemento = complemento;
+	}
+
+
 	public String getBairro() {
-		return this.bairro;
+		return bairro;
 	}
-	
+
+
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+
+
 	public String getCidade() {
-		return this.cidade;
+		return cidade;
 	}
-	
-	public enum Estado {
-		AC, AL, AP, AM, BA, CE, DF, ES, GO, MA, MT, MS, MG,
-		PA, PB, PR, PE, PI, RJ, RN, RS, RO, RR, SC, SP, SE, TO;
+
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
 	}
-	
-	public Estado getEstado() {
-		return this.estado;
+
+
+	public String getUf() {
+		return uf;
 	}
-	public String getEstados() {
-		return estados;
-		
+
+
+	public void setUf(String uf) {
+		this.uf = uf;
 	}
-	
+
+
+	@Override
 	public String toString() {
-		return "ID: " + getId() + "\n Nome: " + getNome() + "\n CPF: " + getCpf() +
-				"\n Telefone: " + getTelefone() + "\n Rua: " + getRua()
-				+ "\n Numero Endereço: " + getNumeroEnd() + "\n Complemento: " + getComplemento() +
-				"\n Bairro: " + getBairro() + "\n Cidade: " + getCidade() + "\n\n";
-
-
-	}}
-
-
+		return "Cliente [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", telefone=" + telefone + ", rua=" + rua
+				+ ", numero=" + numero + ", complemento=" + complemento + ", bairro=" + bairro + ", cidade=" + cidade
+				+ ", uf=" + uf + "] \n \n";
+	}
+}

@@ -51,8 +51,8 @@ public class ProdutoIsento extends Produto {
 	public ProdutoIsento(String nome, String descricao, double precoUnitario, double quantidadeEstoque, String categoriaProduto) {
 	}
 
-		public long getId() {
-		return id;
+		public int getId() {
+		return (int) id;
 	}
 
 	public void setId(int id) {
@@ -99,9 +99,7 @@ public class ProdutoIsento extends Produto {
 		this.categoriaProduto = categoriaProduto;
 	}
 
-	public int getProdutoIsento() {
-		return 0;
-	}
+
 
 	public void setIsento(int Isento) {
 		this.Isento = Isento;

@@ -1,37 +1,40 @@
 package br.com.comex.modelos;
 
+import java.sql.Date;
+
 public class Pedido {
-	private long id;
-	private static long contadorID;
-	public Cliente cliente;
-	private String data;
-
-	public Pedido(String data, Cliente cliente){
-		this.id = contadorID;
-		this.data = data;
-		this.cliente = cliente;
-		contadorID++;
-	}
+	private int id;
+	private Date data;
+	private Cliente cliente;
+	private int cliente_id;
 	
-	public Pedido(Integer id, String data, Cliente cliente) {
-		this.data = data;
-		this.cliente = cliente;
+	public int getCliente_id() {
+		return cliente_id;
 	}
-
-	public long getId() {
+	public void setCliente_id(int cliente_id) {
+		this.cliente_id = cliente_id;
+	}
+	public int getId() {
 		return id;
 	}
-	
-	public String getData() {
+	public void setId(int id) {
+		this.id = id;
+	}
+	public Date getData() {
 		return data;
 	}
-	
+	public void setData(Date data) {
+		this.data = data;
+	}
 	public Cliente getCliente() {
 		return cliente;
 	}
-	
-	public String toString() {
-		return "ID: " + getId() + "\n Data: " + getData() + "\n Cliente_id: " + getCliente().getId();
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
-
+	
+	@Override
+	public String toString() {
+		return "Pedido [id=" + id + ", data=" + data + ", cliente=" + cliente_id + "]";
+	}
 }

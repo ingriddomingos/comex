@@ -1,72 +1,41 @@
 package br.com.comex.modelos;
 
 public class Categoria {
-
-	private static long proximoId = 1;
-
-	private long id;
+	private int id;
 	private String nome;
-	private StatusCategoria status;
-
-	public Categoria(long id, String nome, StatusCategoria status) {
-		if (id != proximoId) {
-			throw new IllegalArgumentException("O id precisa ser em ordem, favor informar novamente! ");
-		}
-
-		this.id = id;
-		this.nome = nome;
-		this.status = status;
-		proximoId++;
+	private String status;
+	
+	
+	public Categoria(String string, StatusCategoria ativa) {
 	}
 
-	public Categoria(long id, String nome) {
-		if (nome == null) {
-			throw new IllegalArgumentException("É necessário atribuir um nome para o curso!  ");
-		}
-		if (nome.length() <= 3) {
-			throw new IllegalArgumentException("É necessário ter mais de 3 caracteres o nome do curso! ");
-		}
-
-		this.id = proximoId;
-		this.nome = nome;
-		this.status = StatusCategoria.ATIVA;
-		proximoId++;
+	public Categoria() {
 	}
 
-
-	public Categoria(String nome, StatusCategoria status) {
-	}
-
-	public static long getProximoId() {
-		return proximoId;
-	}
-
-	public static void setProximoId(long proximoId) {
-		Categoria.proximoId = proximoId;
-	}
-
-	public long getId() {
+	public int getId() {
 		return id;
 	}
-
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
-
 	public String getNome() {
 		return nome;
 	}
-
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
-	public StatusCategoria getStatus() {
+	public String getStatus() {
 		return status;
 	}
-
-	public void setStatus(StatusCategoria status) {
+	public void setStatus(String status) {
 		this.status = status;
+	}
+	@Override
+	public String toString() {
+		return "Categoria [id=" + id + ", nome=" + nome + ", status=" + status + "]";
+	}
+	public void setStatus(StatusCategoria ativa) {
+		
 	}
 
 }
